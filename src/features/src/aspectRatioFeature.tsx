@@ -33,7 +33,7 @@ class AspectRatioFeature extends FFmpegFeature {
     return { aspectRatio: ASPECT_RATIO.value, height: HEIGHT.value, width: WIDTH.value };
   }
 
-  setFFmpegCommands = (aspectRatio: number, height: number, width: number) => {
+  setFFmpegCommands = (aspectRatio: number, width: number, height: number) => {
     const verifyAspectRatio = width / height;
     if (aspectRatio === verifyAspectRatio) {
       this.ffmpegCommands = `-vf scale=${width}:${height}`;
